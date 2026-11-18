@@ -146,10 +146,10 @@ for _, row in df.iterrows():
   lat, lon = seoul_coords[region]
   score = simulated_risk if region == selected_region else row["risk_score"]
 
-  if score >= 60:
-    color = "#e74c3c"  # 고위험 (빨강)
-  elif score >= 45:
-    color = "#f39c12"  # 주의 (주황)
+  if score >= 32:
+    color = "#e74c3c"  # 고위험 (빨강: 도봉구, 은평구, 강북구, 성북구, 관악구 등)
+  elif score >= 20:
+    color = "#f39c12"  # 주의 (주황: 종로구, 서대문구, 용산구, 중구 등)
   else:
     color = "#2ecc71"  # 양호 (초록)
 
